@@ -7,12 +7,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyFirstModule } from './my-first-module/my-first-module';
 import { DirectivesIntro } from './directives-intro/directives-intro';
 import { Highlight } from './directives-intro/highlight';
+import { PipeIntro } from './pipe-intro/pipe-intro';
+import { MyFirstPipe } from './pipe-intro/my-first-pipe';
+import { Parent } from './dataCommunication/parent/parent';
+import { Child } from './dataCommunication/child/child';
 
 @NgModule({
   declarations: [
     App,
     DirectivesIntro,
     Highlight,
+    PipeIntro,
+    MyFirstPipe,
+    Parent,
+    Child,
     
   ],
   imports: [

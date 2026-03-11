@@ -9,6 +9,7 @@ import { MyFirstComponent } from '../my-first-component/my-first-component';
   imports: [
     CommonModule
   ],
-  exports:[MyFirstComponent]
+  exports:[MyFirstComponent],
+  providers:[]
 })
 export class MyFirstModule { }
