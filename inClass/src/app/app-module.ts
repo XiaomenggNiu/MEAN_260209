@@ -15,6 +15,8 @@ import { Lifecycle } from './lifecycle/lifecycle';
 import { FormsIntroComponent } from './forms-intro-component/forms-intro-component';
 import { HttpIntro } from './http-intro/http-intro';
 import { HttpClientModule } from '@angular/common/http';
+import { SubjectIntro } from './subject-intro/subject-intro';
+import { SecondComponent } from './subject-intro/second-component/second-component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     Child,
     FormsIntroComponent,
     HttpIntro,
+    SubjectIntro,
+    SecondComponent,
     // Lifecycle,
     
   ],

@@ -25,9 +25,11 @@ export class DemoDataService {
     observer.next(4);
    
   })
+  
   // 0. Import the HttpClientModule in RootModule
   // 1. Inject the HttpClient Service
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient){
+  }
   // 2. A method to make http request
   getSampleData(): Observable<Todo[]>{
     return this.http.get<Todo[]>(this.url);

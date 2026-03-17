@@ -14,7 +14,7 @@ export class HttpIntro implements OnDestroy, OnInit, AfterViewInit{
   todoObs: Observable<any> | undefined;
   loading: boolean = true;
 
-  obsFromOperators = interval(1000);
+  // obsFromOperators = interval(1000);
   //  documet.getElementby/querySelector
   @ViewChild('btn') btn: ElementRef | undefined;
   // obsFromOperators = fromEvent(this.btn.nativeElement,);
@@ -32,11 +32,11 @@ export class HttpIntro implements OnDestroy, OnInit, AfterViewInit{
   ngOnInit(): void {
     // of([1, 2, 3]).subscribe(val=>console.log(val))
     // from([1, 2, 3]).subscribe(val=>console.log(val))
-    this.obsFromOperators.pipe(map(x=>10*x), take(10)).subscribe(val=>console.log(val))
-    // this.sub.push(this.dataService.localObs.subscribe(
-    //   (val)=>{console.log(val)}, 
-    // (error)=>{console.log(error)}, 
-    // ()=>{console.log("completed")}))
+    // this.obsFromOperators.pipe(map(x=>10*x), take(10)).subscribe(val=>console.log(val))
+    this.sub.push(this.dataService.localObs.subscribe(
+      (val)=>{console.log(val)}, 
+    (error)=>{console.log(error)}, 
+    ()=>{console.log("completed")}))
   }
 
   ngOnDestroy(): void {
@@ -50,6 +50,6 @@ export class HttpIntro implements OnDestroy, OnInit, AfterViewInit{
     console.log(this.btn?.nativeElement);
     // fromEvent(elem,"click").subscribe((val)=>{console.log("button is clicked", val)})
     const clickObs = fromEvent(elem,"click");
-    this.obsFromOperators.pipe(takeUntil(clickObs)).subscribe(val=>console.log(val))
+    // this.obsFromOperators.pipe(takeUntil(clickObs)).subscribe(val=>console.log(val))
   }
 }
