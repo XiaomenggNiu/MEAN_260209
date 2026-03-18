@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 export interface Todo{
   userId: number,
@@ -32,6 +32,9 @@ export class DemoDataService {
   }
   // 2. A method to make http request
   getSampleData(): Observable<Todo[]>{
-    return this.http.get<Todo[]>(this.url);
+    return this.http.get<Todo[]>(this.url).pipe(
+      tap((val)=>{
+        console.log(val)
+    }));
   }
 }

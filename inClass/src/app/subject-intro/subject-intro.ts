@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DemoDataService } from '../http-intro/demo-data-service';
 import { ShareDataService } from './share-data-service';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, debounceTime, ReplaySubject, Subject } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-subject-intro',
@@ -15,9 +16,18 @@ export class SubjectIntro implements OnInit{
   // sub = new Subject();
   // sub = new BehaviorSubject(20);
   sub = new ReplaySubject(1);
+
+  searchForm = new FormControl();
   constructor(private dataService: ShareDataService){}
 
   ngOnInit(): void {
+    console.log(this.searchForm);
+    this.searchForm.valueChanges.pipe(
+      debounceTime(1000)
+    ).subscribe((val)=>{
+      console.log("Formcontrol value changed,", val)
+
+    })
     // this.dataService.localObs.subscribe((res)=>{
     //   console.log(res);
     // })

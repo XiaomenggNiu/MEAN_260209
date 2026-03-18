@@ -17,3 +17,14 @@
 3. can be stopped by unsubscribing from the Subscription
 4. has more operators from rxjs: pure function
 5. unnecessary to unsubscribe: When the obs stop on its own
+6. Subject- Multicasting, sub.next out of constructor 
+new BehaviorSubject(initialValue)
+new ReplaySubject(bufferSize)
+7. Async Pipe: subscribe to obs/sub from template
+
+# Operators
+1. Creation Operators: return an observable, fromEvent, of VS from, interval().subscribe(), forkJoin(=promise.all) VS combineLatest
+2. Pipeable Operators: sourceObs.pipe().subscribe(), debounceTime VS throttleTime, sourceObs.switchMap(()=>return innerObs) VS concatMap VS mergeMap, map()
+3. filter(()=>{condition}), take(num) VS takeUntil(innerObs)
+4. delay(1000), tap()
+5. share(), sub.asObservable()
