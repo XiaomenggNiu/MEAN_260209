@@ -16,11 +16,11 @@ export class App implements OnInit, AfterViewInit{
   ngAfterViewInit(){
     const clickObs = fromEvent(this.myBtn?.nativeElement, 'click')
 
-    interval(1000).pipe(
-      takeUntil(clickObs)
-    ).subscribe((val)=>{
-      console.log(val);
-    })
+    // interval(1000).pipe(
+    //   takeUntil(clickObs)
+    // ).subscribe((val)=>{
+    //   console.log(val);
+    // })
   }
 
 }

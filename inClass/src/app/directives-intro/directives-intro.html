@@ -13,7 +13,7 @@
 <h4>NgFor</h4>
 <div *ngIf="arr.length">
     <h3>user list</h3>
-    <div *ngFor="let person of arr" [appHighlight]="textColor">
+    <div *ngFor="let person of arr">
     {{person.name}} - {{person.email}}
     </div>
 </div>

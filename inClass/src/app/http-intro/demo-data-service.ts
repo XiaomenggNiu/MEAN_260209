@@ -37,4 +37,9 @@ export class DemoDataService {
         console.log(val)
     }));
   }
+
+  login(){
+    // verify in backend
+    return true;
+  }
 }

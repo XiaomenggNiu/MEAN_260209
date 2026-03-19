@@ -28,3 +28,13 @@ new ReplaySubject(bufferSize)
 3. filter(()=>{condition}), take(num) VS takeUntil(innerObs)
 4. delay(1000), tap()
 5. share(), sub.asObservable()
+
+# Advanced Routing
+1. RouterEvents
+2. Lazy Loading
+3. Route Parameters :
+4. Query Parameters ?
+5. Activated Route
+6. Route Guards
+7. Resolver
+

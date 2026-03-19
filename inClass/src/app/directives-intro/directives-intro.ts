@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Highlight } from './highlight';
 
 @Component({
   selector: 'app-directives-intro',
-  standalone: false,
+  standalone: true,
+  imports:[CommonModule],
   templateUrl: './directives-intro.html',
   styleUrl: './directives-intro.scss',
 })
