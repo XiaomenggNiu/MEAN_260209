@@ -38,3 +38,11 @@ new ReplaySubject(bufferSize)
 6. Route Guards
 7. Resolver
 
+# ng-container, ng-template
+1. ng-container: Group elements
+2. ng-template
+3. ng-content: content projection (parent -> child, html)
+
+# change Detection
+1. default: event, data update, observable emits
+2. onpush: user events, @Input

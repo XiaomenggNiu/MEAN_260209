@@ -8,7 +8,7 @@ import { TransferData } from '../transfer-data';
   styleUrl: './parent.scss',
 })
 export class Parent {
-  msg = "Hello From Parent"
+  msg = {name: "Hello From Parent"}
   msgFromChild: any;
   // dependency Injection
   constructor(private dataService: TransferData){

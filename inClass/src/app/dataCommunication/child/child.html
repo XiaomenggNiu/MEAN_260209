@@ -1,4 +1,8 @@
-<h2>Child Component</h2>
-<p>Message from Parent: {{fromParent}}</p>
+<h2>Child Component {{count}}</h2>
+<p>Message from Parent: {{fromParent.name}}</p>
 <input [(ngModel)]="msg"/>
 <button (click)="onClick()">Alert</button>
+<ng-content select="#div1"></ng-content>
+<ng-content select="#div2"></ng-content>
+<ng-content select="#div3"></ng-content>
+<ng-content select="header"></ng-content>

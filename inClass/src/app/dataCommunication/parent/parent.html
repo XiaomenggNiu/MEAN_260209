@@ -1,7 +1,12 @@
 <h2>Parent Component</h2>
-<input [(ngModel)]="msg"/>
+<input [(ngModel)]="msg.name"/>
 <p>Message from child: {{msgFromChild}}</p>
-<app-child [fromParent]="msg" (toParent)="fromChild($event)"></app-child>
+<app-child [fromParent]="msg" (toParent)="fromChild($event)">
+    <div id='div1'>Hello there1</div>
+    <div id='div2'>Hello there2</div>
+    <div id='div3'>Hello there3</div>
+    <header>This the header</header>
+</app-child>
 
 <h2>Non-relationship components</h2>
 <p>Use service to share data</p>

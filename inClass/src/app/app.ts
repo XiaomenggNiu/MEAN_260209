@@ -8,6 +8,7 @@ import { from, fromEvent, interval, take, takeUntil } from 'rxjs';
   styleUrl: './app.scss',
 })
 export class App implements OnInit, AfterViewInit{
+  showContent = true;
   @ViewChild('btn') myBtn: ElementRef | undefined;
   
   ngOnInit(): void {
