@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {vi} from 'vitest';
 import { Parent } from './parent';
 import { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Child } from '../child/child';
@@ -66,9 +66,12 @@ describe('Parent', () => {
       By.directive(FakeChildComponent)
     );
     const childInstance = childFixture.componentInstance;
-    spyOn(component.fromChild);
+    // vi.spyOn
+    spyOn(component,'fromChild' ).and.callThrough();
     childInstance.toParent.emit("Hello from Unit test");
+    
     expect(component.fromChild).toHaveBeenCalled();
+    fixture.detectChanges();
     expect(component.msgFromChild).toBe("Hello from Unit test")
   })
 
