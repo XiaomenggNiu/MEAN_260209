@@ -52,3 +52,8 @@ new ReplaySubject(bufferSize)
 2. Nested Components (Parent to child)
 3. Component with Service (DI)
 4. Service with HttpClient
+
+
+# NGRX
+1. Redux, state (data) management
+2. Store, Action, Reducer (pure fn), Selector, Effect

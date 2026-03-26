@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubjectIntro } from './subject-intro/subject-intro';
 import { SecondComponent } from './subject-intro/second-component/second-component';
 import { RoutingIntro } from './routing-intro/routing-intro';
+import { CounterNgRx } from './counter-ng-rx/counter-ng-rx';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter-ng-rx/Store/reducer';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { RoutingIntro } from './routing-intro/routing-intro';
     SubjectIntro,
     SecondComponent,
     RoutingIntro,
+    CounterNgRx,
     // Lifecycle,
     
   ],
@@ -41,7 +45,17 @@ import { RoutingIntro } from './routing-intro/routing-intro';
     FormsModule,
     ReactiveFormsModule,
     // MyFirstModule,
-    HttpClientModule 
+    HttpClientModule ,
+    // Register all reducers
+    // forFeature / forRoot 
+    /*  Store {
+      Counter: { count: number},
+      User:{ orders:{}}
+      ..
+    } */
+    StoreModule.forRoot({counter: counterReducer, 
+      // user: userReducer
+    })
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
